@@ -52,3 +52,18 @@ def criminal_name(request, name):
     elif request.method == 'DELETE':
         tutorials.delete()
         return JsonResponse({'message': 'Alert was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['PUT'])
+def update_criminal(request, name):
+    try:
+        tutorial = Tutorial.objects.get(computer_name=name)
+    except Tutorial.DoesNotExist:
+        return JsonResponse({'message': 'The alert does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'PUT':
+        tutorial_data = JSONParser().parse(request)
+        tutorial_serializer = TutorialSerializer(tutorial, data=tutorial_data)
+        if tutorial_serializer.is_valid():
+            tutorial_serializer.save()
+            return JsonResponse(tutorial_serializer.data)
+        return JsonResponse(tutorial_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -5,4 +5,5 @@ from django.urls import path
 urlpatterns = [
     url(r'^os_windows/$', views.criminal_data),
     path('os_windows/<str:name>/', views.criminal_name),
+    path('os_windows/<str:name>/update/', views.update_criminal),
 ]

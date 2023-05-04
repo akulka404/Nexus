@@ -5,7 +5,7 @@ from multiselectfield import MultiSelectField
 
 
 class OS_UNIX(models.Model):
-    computer_id = models.IntegerField()
+    computer_id = models.AutoField(primary_key=True)
     computer_name = models.CharField(max_length=100, blank=False, default='')
     os_version = models.CharField(max_length=100, blank=False, default='')
     serial_number = models.CharField(max_length=30, blank=False, default='')
@@ -20,6 +20,9 @@ class OS_UNIX(models.Model):
     software_count = models.IntegerField()
     authentic_software_count = models.IntegerField()
     unauthentic_software_count = models.IntegerField()
+    
+    def get_absolute_url(self):
+        return reverse('admin:%s_%s_change' % (self._meta.app_label, self._meta.model_name), args=[str(self.id), 'unique_identifier'])
 
 
 class Meta:

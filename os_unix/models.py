@@ -2,10 +2,12 @@ from django.db import models
 from datetime import timedelta
 # from six import python_2_unicode_compatible
 from multiselectfield import MultiSelectField
+from django.urls import reverse
 
 
 class OS_UNIX(models.Model):
     computer_id = models.AutoField(primary_key=True)
+    username = models.IntegerField()
     computer_name = models.CharField(max_length=100, blank=False, default='')
     os_version = models.CharField(max_length=100, blank=False, default='')
     serial_number = models.CharField(max_length=30, blank=False, default='')

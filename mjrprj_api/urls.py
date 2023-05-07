@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('os_unix.urls')),
     path('', include('os_windows.urls')),
+    path('', include('cred_verify.urls')),
 ]

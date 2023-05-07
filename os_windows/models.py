@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class OS_Windows(models.Model):
     computer_id = models.AutoField(primary_key=True)
+    username = models.IntegerField()
     computer_name = models.CharField(max_length=100, blank=False, default='')
     product_key = models.CharField(max_length=30, blank=False, default='')
     hostname = models.CharField(max_length=100, blank=False, default='')

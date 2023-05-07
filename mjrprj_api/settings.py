@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'os_unix',
     'os_windows',
+    'cred_verify',
     'rest_framework',
 ]
 

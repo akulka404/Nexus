@@ -6,4 +6,4 @@ class CRED_VERIFY_Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = CRED_VERIFY
-        fields = ('username', 'password', 'type_login')
+        fields = ('name', 'email', 'username', 'password', 'type_login')

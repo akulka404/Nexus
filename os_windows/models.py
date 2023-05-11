@@ -12,7 +12,7 @@ class OS_Windows(models.Model):
     hostname = models.CharField(max_length=100, blank=False, default='')
     ip_address = models.GenericIPAddressField()
     mac_address = models.CharField(max_length=100, blank=False, default='')
-    softwares_installed = models.CharField(max_length=10000, blank=False, default='')
+    softwares_installed = models.TextField()
     software_count = models.IntegerField()
     authentic_software_count = models.IntegerField()
     unauthentic_software_count = models.IntegerField()

@@ -44,7 +44,7 @@ def criminal_data(request):
 def criminal_name(request, name):
     # tutorials = Tutorial.objects.filter(title=title)
     tutorials = Tutorial.objects.filter(
-        username=name)
+        computer_id=name)
     if request.method == 'GET':
         tutorials_serializer = TutorialSerializer(tutorials, many=True)
         return JsonResponse(tutorials_serializer.data, safe=False)

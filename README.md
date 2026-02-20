@@ -1,4 +1,4 @@
-# MjrPrj — Computer Asset & Credential Management REST API
+# Nexus — Computer Asset & Credential Management
 
 A Django REST Framework–based backend service that provides APIs for tracking and managing computer hardware/software inventory across Unix/macOS and Windows endpoints, as well as authenticating user credentials. Designed for deployment on Heroku using Gunicorn and SQLite/WhiteNoise.
 
